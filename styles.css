@@ -1,4 +1,8 @@
+body {
+  color: white;
+}
+
+
 #demo {
-  float: right;
   font-weight: bold;
 }

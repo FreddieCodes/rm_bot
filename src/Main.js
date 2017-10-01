@@ -2,7 +2,7 @@ function Responder() {
   this.response = ""
 }
 
-Responder.prototype.message = function(msg = window.prompt("Hello, what do you want to say?", "Hello")){
+Responder.prototype.message = function(msg = window.prompt("Hello, what do you want to ask Rick?", "Hello")){
   var text;
   switch(msg){
     case "Bye":
@@ -14,26 +14,11 @@ Responder.prototype.message = function(msg = window.prompt("Hello, what do you w
     default:
     text = "Hi, I'm *burrp* Rick, the most *burrp* intelligent being in the universe!"
   }
-  document.getElementById("demo").innerHTML = text;
+  this.response = text
+  // document.getElementById("demo").innerHTML = text;
   return text;
 }
 
-
-// function myFunction() {
-//     var text;
-//     var message = prompt("What's your favorite cocktail drink?", "Daiquiri");
-//     switch(message) {
-//         case "Hello":
-//         text = "Hi, I'm *burrp* Rick, the most *burrp* intelligent being in the universe!";
-//         break;
-//     case "Daiquiri":
-//         text = "Daiquiri is my favorite too!";
-//         break;
-//         case "Cosmopolitan":
-//         text = "Really? Are you sure the Cosmopolitan is your favorite?";
-//         break;
-//         default:
-//         text = "I have never heard of that one..";
-//     }
-//     document.getElementById("demo").innerHTML = text;
-// }
+Responder.prototype.updateView = function() {
+  document.getElementById("demo").innerHTML = this.response
+}

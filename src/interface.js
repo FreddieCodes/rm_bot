@@ -2,7 +2,7 @@
 $(document).ready(function() {
   var responder = new Responder();
 
-  // $('#temperature').text(thermostat.temp);
+  $('#demo').text(responder.response);
 
 
   $("button").click(function( event ){
@@ -11,9 +11,10 @@ $(document).ready(function() {
 
   $('#test').click(function() {
    responder.message();
-    // $('#demo').text(responder.message);
+   responder.updateView();
+    // $('#demo').text(responder.response);
     //  is the same as
-  //  document.getElementById("temperature").innerHTML = thermostat.temp;
+   document.getElementById("demo").innerHTML = responder.response;
   });
 
   // $('#temp-down').click(function() {
